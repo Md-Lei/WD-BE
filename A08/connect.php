@@ -2,7 +2,7 @@
   $dbhost = "localhost";
 	$dbuser = "root";
 	$dbpass = "";
-	$db = "corememories";
+	$db = "corem";
 
 	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
