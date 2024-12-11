@@ -1,6 +1,14 @@
 <?php
 include('connect.php');
 
+if (isset($_GET['islandOfPersonalityID'])) {
+    $islandOfPersonalityID = $_GET['islandOfPersonalityID'];
+    $islandQuery = "SELECT * FROM islandcontents WHERE islandOfPersonalityID = '$islandOfPersonalityID'";
+    $islandResult = executeQuery($islandQuery);
+    $row = mysqli_fetch_assoc($islandResult);
+}
+
+
 $query = "SELECT * FROM islandsofpersonality";
 $result = executeQuery($query);
 
@@ -10,7 +18,7 @@ $result = executeQuery($query);
 <html lang="en">
 
 <head>
-    <title>W3.CSS Template</title>
+    <title>Core Memory</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -61,6 +69,7 @@ $result = executeQuery($query);
             $color = $row['color'];
             $image = $row['image'];
             $status = $row['status'];
+            $islandOfPersonalityID = $row['islandOfPersonalityID'];
             ?>
 
             <div class="w3-row-padding w3-padding-64 w3-container" style="background-color: <?php echo $color; ?>;">
@@ -71,12 +80,14 @@ $result = executeQuery($query);
                         <p class="w3-text-grey py-2"><?php echo $longDescription; ?></p>
                     </div>
                     <div class="w3-third w3-center">
-                        <img src="images/<?php echo $image; ?>" alt="Island Image" class="w3-padding-4"
+                        <img src="images/charactersImages/<?php echo $image; ?>" alt="Island Image" class="w3-padding-4"
                             style="max-width: 70%; height: auto;">
                     </div>
                     <div class="container d-flex justify-content-center align-items-center" style="height: 70px;">
-                        <button onclick="window.location.href='view.php'" class="btn btn-secondary"
-                            style="width: 100px;">Visit</button>
+                        <!-- <button onclick="window.location.href='view.php'" class="btn btn-secondary"
+                            style="width: 100px;">Visit</button> -->
+                        <a href="view.php?islandOfPersonalityID=<?php echo $islandOfPersonalityID; ?>" class="btn btn-secondary"
+                            style="margin-top: 10px; padding: 6px 12px; display: inline-block;">Visit Island</a>
                     </div>
                 </div>
             </div>
