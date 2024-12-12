@@ -49,6 +49,7 @@ $result = executeQuery($query);
             font-size: 200px
         }
     </style>
+    <link rel="icon" href="images/logo.png">
 </head>
 
 <body>
@@ -84,8 +85,6 @@ $result = executeQuery($query);
                             style="max-width: 70%; height: auto;">
                     </div>
                     <div class="container d-flex justify-content-center align-items-center" style="height: 70px;">
-                        <!-- <button onclick="window.location.href='view.php'" class="btn btn-secondary"
-                            style="width: 100px;">Visit</button> -->
                         <a href="view.php?islandOfPersonalityID=<?php echo $islandOfPersonalityID; ?>" class="btn btn-secondary"
                             style="margin-top: 10px; padding: 6px 12px; display: inline-block;">Visit Island</a>
                     </div>
@@ -103,17 +102,11 @@ $result = executeQuery($query);
         <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
     </div>
 
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-        <div class="w3-xlarge w3-padding-32">
-            <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
-        </div>
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </footer>
+    <?php
+
+    include('footer.php');
+
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

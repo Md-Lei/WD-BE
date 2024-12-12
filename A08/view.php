@@ -30,11 +30,11 @@ if (isset($_GET['islandOfPersonalityID'])) {
 
         body {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
             min-height: 100vh;
             margin: 0;
             background-color: #f5f5f5;
+            font-family: "Raleway", sans-serif;
         }
 
         .w3-content {
@@ -53,47 +53,54 @@ if (isset($_GET['islandOfPersonalityID'])) {
             object-fit: cover;
         }
     </style>
+    <link rel="icon" href="images/logo.png">
 </head>
 
 <body>
-    <div class="w3-content">
+    <div class="container-fluid">
 
-        <header class="w3-container w3-center w3-padding-32">
-            <h1><b>Island Content</b></h1>
-            <p>Reflections and stories of the island.</p>
-        </header>
+        <div class="container-fluid">
+            <header class="w3-container w3-center w3-padding-32">
+                <h1><b>Echoes of Moments That Define Us</b></h1>
+                <p>The Memories That Last.</p>
+            </header>
 
-        <?php
-        if (mysqli_num_rows($islandResult) > 0) {
-            while ($row = mysqli_fetch_assoc($islandResult)) {
-                $image = $row['image'];
-                $content = $row['content'];
-                $color = $row['color'];
-                ?>
+            <?php
+            if (mysqli_num_rows($islandResult) > 0) {
+                while ($row = mysqli_fetch_assoc($islandResult)) {
+                    $image = $row['image'];
+                    $content = $row['content'];
+                    $color = $row['color'];
+                    ?>
 
-                <div class="container-fluid">
-                    <div class="w3-card-4 w3-white" style="margin-bottom: 20px; border-radius: 10px;">
+                    <div class="w3-card-4 w3-white"
+                        style="width: 70%; margin: 0 auto 20px auto; border-radius: 10px; text-align: center;">
                         <img src="images/contentImages/<?php echo $image; ?>" alt="Island Image"
-                            style="border-radius: 10px 10px 0 0;">
+                            style="border-radius: 10px 10px 0 0; width: 100%; height: auto;">
                         <div class="w3-container p-5"
                             style="background-color: <?php echo $color; ?>; border-radius: 0 0 10px 10px;">
                             <p><?php echo $content; ?></p>
                         </div>
                     </div>
-                </div>
 
-
-
-                <?php
+                    <?php
+                }
+            } else {
+                echo "No content found for this island.";
             }
-        } else {
-            echo "No content found for this island.";
-        }
-        ?>
+            ?>
 
-        <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-        </footer>
+            <div class="text-center">
+                <button onclick="window.location.href='index.php'" class="btn btn-secondary py-3 mx-5">
+                    Back
+                </button>
+            </div>
+        </div>
+
+        <div class="container" style=" text-align: center; padding: 15px;">
+            <p>© 2024 Copyright: MikeDharen.github.io</p>
+        </div>
+
     </div>
 </body>
 

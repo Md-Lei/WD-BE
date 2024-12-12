@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,9 +74,8 @@
         }
     </style>
 
-
-
     <link rel="icon" href="resources/logo.png">
+
 </head>
 
 <body>
@@ -136,7 +134,12 @@
                 <div class="collapse" id="projectList">
                     <div class="list-group">
                         <button onclick="window.location.href='A08/index.php'"
-                            class="list-group-item list-group-item-action" style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">Core Memories</button>
+                            class="list-group-item list-group-item-action"
+                            style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">Core
+                            Memories</button>
+                        <!-- <button onclick="window.location.href='PRAC/index.php'"
+                            class="list-group-item list-group-item-action"
+                            style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">Practice</button> -->
                     </div>
                 </div>
             </div>
