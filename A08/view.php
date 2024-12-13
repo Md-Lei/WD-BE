@@ -34,7 +34,11 @@ if (isset($_GET['islandOfPersonalityID'])) {
             min-height: 100vh;
             margin: 0;
             background-color: #f5f5f5;
-            font-family: "Raleway", sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, rgb(154, 171, 255) 20%, rgb(61, 173, 168) 70%);
         }
 
         .w3-content {
@@ -73,13 +77,20 @@ if (isset($_GET['islandOfPersonalityID'])) {
                     $color = $row['color'];
                     ?>
 
-                    <div class="w3-card-4 w3-white"
-                        style="width: 70%; margin: 0 auto 20px auto; border-radius: 10px; text-align: center;">
-                        <img src="images/contentImages/<?php echo $image; ?>" alt="Island Image"
-                            style="border-radius: 10px 10px 0 0; width: 100%; height: auto;">
-                        <div class="w3-container p-5"
-                            style="background-color: <?php echo $color; ?>; border-radius: 0 0 10px 10px;">
-                            <p><?php echo $content; ?></p>
+
+                    <div class="container-fluid">
+                        <div class="col">
+                            <div class="row py-3">
+                                <div class="d-flex flex-column align-items-center justify-content-center text-center"
+                                    style="width: 100%;">
+                                    <img src="images/contentImages/<?php echo $image; ?>" alt="Island Image"
+                                        style="border-radius: 15px; width: 70%; height: auto; padding: 10px;">
+                                    <div class="p-2"
+                                        style="display: flex; justify-content: center; align-items: center; height: 100%; text-align: center;">
+                                        <p style="width: 75%;"><?php echo $content; ?></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -102,6 +113,9 @@ if (isset($_GET['islandOfPersonalityID'])) {
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
